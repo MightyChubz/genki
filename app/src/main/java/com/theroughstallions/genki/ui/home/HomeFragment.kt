@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.theroughstallions.genki.R
 import com.theroughstallions.genki.databinding.FragmentHomeBinding
 
