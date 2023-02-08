@@ -10,4 +10,11 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+
+    <string name="GV_Eggs">GV Dozen Eggs</string>
+    <string name="GV_Eggs_info">KCal:180 Fats:0g Protein: 9g</string>
+    <string name="GV_Eggs_price">$9.99</string>
+    <string name="GV_Eggs_number">x1</string>
+
 </resources>

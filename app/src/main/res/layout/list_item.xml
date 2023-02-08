@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/listText"
+        android:layout_width="412dp"
+        android:layout_height="34dp"
+        android:text="@string/GV_Eggs"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/listInfo"
+        android:layout_width="343dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/GV_Eggs_info"
+        app:layout_constraintEnd_toStartOf="@+id/listPrice"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listText" />
+
+    <TextView
+        android:id="@+id/listQuantity"
+        android:layout_width="65dp"
+        android:layout_height="34dp"
+        android:text="@string/GV_Eggs_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/listPrice"
+        android:layout_width="66dp"
+        android:layout_height="44dp"
+        android:text="@string/GV_Eggs_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listText" />
+</androidx.constraintlayout.widget.ConstraintLayout>

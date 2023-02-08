@@ -1,13 +1,40 @@
 package com.theroughstallions.genki.ui.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.theroughstallions.genki.R
+import com.theroughstallions.genki.listItems
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel(private val itemList: ArrayList<listItems>) : RecyclerView.Adapter<HomeViewModel.MyViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        val itemView = LayoutInflater.from(parent.context).inflate(
+            R.layout.list_item,
+            parent, false)
+        return MyViewHolder(itemView)
     }
-    val text: LiveData<String> = _text
+
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        val currentItem = itemList[position]
+        holder.listTitle.text = currentItem.listItem
+        holder.listInfo.text = currentItem.listInfo
+        holder.listQuantity.text = currentItem.listQuantity
+        holder.listPrice.text = currentItem.listPrice
+    }
+
+    override fun getItemCount(): Int {
+
+        return itemList.size
+    }
+
+    class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
+        val listTitle : TextView = itemView.findViewById<TextView>(R.id.listText)
+        val listInfo : TextView = itemView.findViewById<TextView>(R.id.listInfo)
+        val listQuantity : TextView = itemView.findViewById<TextView>(R.id.listQuantity)
+        val listPrice : TextView = itemView.findViewById<TextView>(R.id.listPrice)
+    }
+
 }
