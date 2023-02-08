@@ -17,4 +17,6 @@
     <string name="GV_Eggs_price">$9.99</string>
     <string name="GV_Eggs_number">x1</string>
 
+    <string name="add_Item">add item to list</string>
+
 </resources>
