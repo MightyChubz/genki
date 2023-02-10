@@ -1,12 +1,13 @@
 package com.theroughstallions.genki.ui.home
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import com.theroughstallions.genki.R
 import com.theroughstallions.genki.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -22,17 +23,26 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        // Darkmode support for icons
+        val constructionImageView = binding.constructionImageView
+        when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
+            Configuration.UI_MODE_NIGHT_YES -> constructionImageView.setImageDrawable(
+                getDrawable(
+                    requireContext(),
+                    R.drawable.ic_home_construction_dark
+                )
+            )
+            Configuration.UI_MODE_NIGHT_NO -> constructionImageView.setImageDrawable(
+                getDrawable(
+                    requireContext(),
+                    R.drawable.ic_home_construction
+                )
+            )
         }
-        return root
+
+        return binding.root
     }
 
     override fun onDestroyView() {
