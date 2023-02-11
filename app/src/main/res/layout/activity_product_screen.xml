@@ -23,10 +23,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:height="48dp"
-        android:minHeight="48dp"
         android:ems="10"
+        android:hint="@string/product_screen_item_name_hint"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:minHeight="48dp"
+        android:importantForAutofill="no"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemNameTextView" />
 
@@ -48,9 +49,10 @@
         android:layout_marginTop="8dp"
         android:height="48dp"
         android:ems="10"
-        android:hint="0"
+        android:hint="@string/product_screen_item_quantity_hint"
         android:inputType="numberSigned"
         android:minHeight="48dp"
+        android:importantForAutofill="no"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quantityTextView" />
 
