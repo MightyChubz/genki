@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Genki"
         tools:targetApi="31">
         <activity
-            android:name=".ui.activities.ProductScreenActivity"
+            android:name=".ui.activities.AddProductActivity"
             android:label="@string/product_screen_title"
             android:exported="false">
             <meta-data

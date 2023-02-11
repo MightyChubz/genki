@@ -5,10 +5,10 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.theroughstallions.genki.R
 
-class ProductScreenActivity : AppCompatActivity() {
+class AddProductActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_product_screen)
+        setContentView(R.layout.activity_add_product)
 
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
