@@ -19,4 +19,10 @@
     <string name="product_screen_title">Add Product</string>
     <string name="product_screen_item_name_hint">Item Name</string>
     <string name="product_screen_item_quantity_hint">0</string>
+
+    <!-- Preference Titles -->
+    <string name="general_header">General</string>
+
+    <!-- General Preferences -->
+    <string name="name_title">Your name</string>
 </resources>

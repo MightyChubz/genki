@@ -10,5 +10,9 @@
         android:name="com.theroughstallions.genki.ui.home.HomeFragment"
         android:label="@string/menu_shopping_list"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.theroughstallions.genki.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings" />
 
 </navigation>
