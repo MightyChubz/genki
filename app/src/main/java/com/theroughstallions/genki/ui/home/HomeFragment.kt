@@ -1,11 +1,9 @@
 package com.theroughstallions.genki.ui.home
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.fragment.app.Fragment
 import com.theroughstallions.genki.R
 import com.theroughstallions.genki.databinding.FragmentHomeBinding
