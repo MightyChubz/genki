@@ -27,6 +27,7 @@
         android:hint="@string/product_screen_item_name_hint"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:importantForAutofill="no"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemNameTextView" />
 
@@ -51,6 +52,7 @@
         android:hint="@string/product_screen_item_quantity_hint"
         android:inputType="numberSigned"
         android:minHeight="48dp"
+        android:importantForAutofill="no"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quantityTextView" />
 
