@@ -1,4 +1,4 @@
-package com.theroughstallions.genki.ui.settings
+package com.theroughstallions.genki.ui.fragments
 
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat

@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Genki"
         tools:targetApi="31">
         <activity
-            android:name=".ProductScreenActivity"
+            android:name=".ui.activities.ProductScreenActivity"
             android:label="@string/product_screen_title"
             android:exported="false">
             <meta-data
@@ -20,7 +20,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activities.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Genki.NoActionBar">
