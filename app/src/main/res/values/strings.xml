@@ -17,4 +17,6 @@
     <string name="product_screen_item_quantity">Quantity</string>
     <string name="product_screen_add_button">Add</string>
     <string name="product_screen_title">Add Product</string>
+    <string name="product_screen_item_name_hint">Item Name</string>
+    <string name="product_screen_item_quantity_hint">0</string>
 </resources>
