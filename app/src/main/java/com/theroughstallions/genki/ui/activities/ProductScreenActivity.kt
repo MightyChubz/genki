@@ -1,8 +1,9 @@
-package com.theroughstallions.genki
+package com.theroughstallions.genki.ui.activities
 
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.theroughstallions.genki.R
 
 class ProductScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

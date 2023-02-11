@@ -1,4 +1,4 @@
-package com.theroughstallions.genki
+package com.theroughstallions.genki.ui.activities
 
 import android.os.Bundle
 import android.view.Menu
@@ -10,6 +10,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
+import com.theroughstallions.genki.R
 import com.theroughstallions.genki.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

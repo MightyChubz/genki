@@ -1,4 +1,4 @@
-package com.theroughstallions.genki.ui.home
+package com.theroughstallions.genki.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
