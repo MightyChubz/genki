@@ -20,6 +20,8 @@
     <string name="product_screen_item_name_hint">Item Name</string>
     <string name="product_screen_item_quantity_hint">0</string>
 
+    <string name="contact_us_fragment_team_name">The Rough Stallions</string>
+
     <!-- Preference Titles -->
     <string name="general_header">General</string>
 
