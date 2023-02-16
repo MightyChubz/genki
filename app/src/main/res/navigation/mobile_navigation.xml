@@ -14,5 +14,10 @@
         android:id="@+id/nav_settings"
         android:name="com.theroughstallions.genki.ui.fragments.SettingsFragment"
         android:label="@string/menu_settings" />
+    <fragment
+        android:id="@+id/nav_contact_us"
+        android:name="com.theroughstallions.genki.ui.fragments.ContactUsFragment"
+        android:label="@string/menu_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
 
 </navigation>
