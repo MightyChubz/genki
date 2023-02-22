@@ -2,15 +2,37 @@
     <string name="app_name">Genki</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Genki</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_shopping_list">Shopping List</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_contact_us">Contact Us</string>
+    <string name="home_construction_header">This screen is currently under construction…</string>
+    <string name="home_construction_subtitle">Return later…</string>
+    <string name="ic_construction_content_description">Construction</string>
 
+    <string name="product_screen_item_name">Item Name</string>
+    <string name="product_screen_item_quantity">Quantity</string>
+    <string name="product_screen_add_button">Add</string>
+    <string name="product_screen_title">Add Product</string>
+    <string name="product_screen_item_name_hint">Item Name</string>
+    <string name="product_screen_item_quantity_hint">0</string>
+
+    <string name="contact_us_fragment_team_name">The Rough Stallions</string>
+    <string name="contact_us_fragment_alexander_cusaac">Alexander Cusaac</string>
+    <string name="contact_us_fragment_alexander_email">ABCusaac@student.fullsail.edu</string>
+    <string name="contact_us_fragment_james_sobeck">James Sobeck</string>
+    <string name="contact_us_fragment_james_email">JLSobeck@student.fullsail.edu</string>
+    <string name="contact_us_fragment_marcus_laguerre">Marcus Laguerre</string>
+    <string name="contact_us_fragment_marcus_email">MTLaguerre@student.fullsail.edu</string>
+
+    <!-- Preference Titles -->
+    <string name="general_header">General</string>
+
+    <!-- General Preferences -->
+    <string name="name_title">Your name</string>
 
     <string name="GV_Eggs">GV Dozen Eggs</string>
     <string name="GV_Eggs_info">KCal:180 Fats:0g Protein: 9g</string>
