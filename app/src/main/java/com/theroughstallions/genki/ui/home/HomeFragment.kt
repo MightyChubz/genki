@@ -1,5 +1,6 @@
 package com.theroughstallions.genki.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +9,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.theroughstallions.genki.R
+import com.theroughstallions.genki.databinding.FragmentContactUsBinding
+import com.theroughstallions.genki.databinding.FragmentHomeBinding
 import com.theroughstallions.genki.listItems
+import com.theroughstallions.genki.ui.activities.AddProductActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +26,11 @@ private const val ARG_PARAM2 = "param2"
  */
 class HomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
+    private var _binding: FragmentHomeBinding? = null
+
+    private val binding get() = _binding!!
+
+
     private var param1: String? = null
     private var param2: String? = null
 
@@ -51,7 +60,16 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding.addProduct.setOnClickListener {
+            startActivity(
+                Intent(
+                    activity,
+                    AddProductActivity::class.java
+                )
+            )
+        }
+        return binding.root
     }
 
     companion object {
@@ -75,7 +93,7 @@ class HomeFragment : Fragment() {
     }
 
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?){
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dataInit()
         val layoutManager = LinearLayoutManager(context)
@@ -86,7 +104,7 @@ class HomeFragment : Fragment() {
     }
 
 
-    private fun dataInit(){
+    private fun dataInit() {
         listItemsList = arrayListOf<listItems>()
 
         title = arrayOf(getString((R.string.GV_Eggs)))
@@ -101,7 +119,7 @@ class HomeFragment : Fragment() {
         println(total)
         val calTotal = total.sum()
 
-        for (i in title.indices){
+        for (i in title.indices) {
             val list = listItems(title[0], info[0], quantity[0], price[0], calTotal.toString())
             listItemsList.add(list)
         }
