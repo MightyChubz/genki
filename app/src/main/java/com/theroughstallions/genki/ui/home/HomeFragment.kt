@@ -95,9 +95,9 @@ class HomeFragment : Fragment() {
         price = arrayOf(getString(R.string.GV_Eggs_price))
         total = arrayOf(getString(R.string.list_total))
 
-        ints = total.map { it.toInt() }.toTypedArray()
+//        ints = total.map { it.toInt() }.toTypedArray()
 
-        val caledTotal = ints.sum()
+        val caledTotal = 0
 
         //loop over and add price to total
         //work on adding quantity too the calculation as well.
