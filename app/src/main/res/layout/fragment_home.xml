@@ -13,7 +13,19 @@
         android:layout_height="674dp"
         android:layout_alignTop="@id/listView"
         android:layout_marginBottom="20dp"
-        tools:listitem="@layout/list_item" />
+        tools:listitem="@layout/list_item">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/listView"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:contentDescription="@string/add_Item"
+        android:src="@android:drawable/ic_input_add" />
 
 
 </RelativeLayout>

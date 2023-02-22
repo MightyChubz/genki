@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
     lateinit var info: Array<String>
     lateinit var quantity: Array<String>
     lateinit var price: Array<String>
-    lateinit var total: Array<String>
+    lateinit var total: List<Float>
     lateinit var ints: Array<Int>
     lateinit var calTotal: String
 
@@ -93,17 +93,16 @@ class HomeFragment : Fragment() {
         info = arrayOf(getString((R.string.GV_Eggs_info)))
         quantity = arrayOf(getString(R.string.GV_Eggs_number))
         price = arrayOf(getString(R.string.GV_Eggs_price))
-        total = arrayOf(getString(R.string.list_total))
+        //don't need an array if its a cal value
+        //total = arrayOf(getString(R.string.list_total))
 
-        ints = total.map { it.toInt() }.toTypedArray()
-
-        val caledTotal = ints.sum()
-
-        //loop over and add price to total
-        //work on adding quantity too the calculation as well.
+        //println(price.map{ it.drop(1).toFloat()})
+        total = price.map { it.drop(1).toFloat() }
+        println(total)
+        val calTotal = total.sum()
 
         for (i in title.indices){
-            val list = listItems(title[0], info[0], quantity[0], price[0], caledTotal.toString())
+            val list = listItems(title[0], info[0], quantity[0], price[0], calTotal.toString())
             listItemsList.add(list)
         }
 
