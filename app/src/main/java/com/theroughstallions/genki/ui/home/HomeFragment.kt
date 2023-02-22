@@ -33,6 +33,9 @@ class HomeFragment : Fragment() {
     lateinit var info: Array<String>
     lateinit var quantity: Array<String>
     lateinit var price: Array<String>
+    lateinit var total: Array<String>
+    lateinit var ints: Array<Int>
+    lateinit var calTotal: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,9 +93,17 @@ class HomeFragment : Fragment() {
         info = arrayOf(getString((R.string.GV_Eggs_info)))
         quantity = arrayOf(getString(R.string.GV_Eggs_number))
         price = arrayOf(getString(R.string.GV_Eggs_price))
+        total = arrayOf(getString(R.string.list_total))
+
+        ints = total.map { it.toInt() }.toTypedArray()
+
+        val caledTotal = ints.sum()
+
+        //loop over and add price to total
+        //work on adding quantity too the calculation as well.
 
         for (i in title.indices){
-            val list = listItems(title[0], info[0], quantity[0], price[0])
+            val list = listItems(title[0], info[0], quantity[0], price[0], caledTotal.toString())
             listItemsList.add(list)
         }
 

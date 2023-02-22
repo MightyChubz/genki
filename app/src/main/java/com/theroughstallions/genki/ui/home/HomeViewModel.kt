@@ -23,18 +23,22 @@ class HomeViewModel(private val itemList: ArrayList<listItems>) : RecyclerView.A
         holder.listInfo.text = currentItem.listInfo
         holder.listQuantity.text = currentItem.listQuantity
         holder.listPrice.text = currentItem.listPrice
+        holder.listTotal.text = currentItem.listTotal
     }
 
     override fun getItemCount(): Int {
 
         return itemList.size
     }
-
     class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val listTitle : TextView = itemView.findViewById<TextView>(R.id.listText)
         val listInfo : TextView = itemView.findViewById<TextView>(R.id.listInfo)
         val listQuantity : TextView = itemView.findViewById<TextView>(R.id.listQuantity)
         val listPrice : TextView = itemView.findViewById<TextView>(R.id.listPrice)
+        val listTotal: TextView = itemView.findViewById<TextView>(R.id.listTotal)
     }
+
+
+
 
 }

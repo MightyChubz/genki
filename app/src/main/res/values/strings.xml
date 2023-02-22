@@ -18,5 +18,6 @@
     <string name="GV_Eggs_number">x1</string>
 
     <string name="add_Item">add item to list</string>
+    <string name="list_total">10</string>
 
 </resources>
