@@ -33,4 +33,13 @@
 
     <!-- General Preferences -->
     <string name="name_title">Your name</string>
+
+    <string name="GV_Eggs">GV Dozen Eggs</string>
+    <string name="GV_Eggs_info">KCal:180 Fats:0g Protein: 9g</string>
+    <string name="GV_Eggs_price">$9.99</string>
+    <string name="GV_Eggs_number">x1</string>
+
+    <string name="add_Item">add item to list</string>
+    <string name="list_total">10</string>
+
 </resources>
