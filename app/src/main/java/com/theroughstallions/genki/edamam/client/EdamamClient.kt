@@ -37,6 +37,40 @@ object EdamamClient {
     }
 
     /**
+     * This function sends a nutrients request to the API.
+     *
+     * @param query String The query to send to the API.
+     * @return Response The response from the API.
+     */
+    fun sendNutrientsRequest(query: String): Response {
+        configureConnection(SearchTypes.NUTRIENTS)
+        httpURLConnection?.headerFields?.put("ingredients", listOf(query))
+        httpURLConnection?.connect() // Open the connection.
+
+        val response = getResponseFromInputStream()
+
+        httpURLConnection?.disconnect() // Close the connection.
+        return response
+    }
+
+    /**
+     * This function sends an auto-completion request to the API.
+     *
+     * @param query String The query to send to the API.
+     * @return Response The response from the API.
+     */
+    fun sendAutoCompletionRequest(query: String): Response {
+        configureConnection(SearchTypes.AUTO_COMPLETION)
+        httpURLConnection?.headerFields?.put("q", listOf(query))
+        httpURLConnection?.connect() // Open the connection.
+
+        val response = getResponseFromInputStream()
+
+        httpURLConnection?.disconnect() // Close the connection.
+        return response
+    }
+
+    /**
      * This function gets the response from the API.
      *
      * @return Response The response from the API.
