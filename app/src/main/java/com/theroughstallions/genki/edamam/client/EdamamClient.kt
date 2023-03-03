@@ -9,6 +9,8 @@ import java.net.URL
  *
  * @property urls Map<String, URL> A map of the API endpoints.
  * @property httpURLConnection HttpURLConnection? The HTTP connection to the API.
+ * @see SearchTypes
+ * @see Response
  */
 object EdamamClient {
     private val urls: Map<SearchTypes, URL> = mapOf(
