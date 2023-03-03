@@ -9,5 +9,4 @@ package com.theroughstallions.genki.edamam.client
  * @see ResponseErrorCode
  */
 class ResponseCodeException(message: String, errorCode: Int) :
-    Throwable("$errorCode: $message") {
-}
+    Throwable("$errorCode: $message")
