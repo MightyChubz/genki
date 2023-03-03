@@ -64,10 +64,42 @@ object EdamamClient {
         httpURLConnection?.headerFields?.put("q", listOf(query))
         httpURLConnection?.connect() // Open the connection.
 
+        if (!isResponseSuccessful(httpURLConnection?.responseCode ?: 0)) {
+            throwOnResponseError(httpURLConnection?.responseCode ?: 0)
+        }
+
         val response = getResponseFromInputStream()
 
         httpURLConnection?.disconnect() // Close the connection.
         return response
+    }
+
+    /**
+     * Checks if the response code is valid. If it is not, then an exception is thrown.
+     *
+     * @param responseCode Int The response code to check.
+     * @return Boolean True if the response code is valid, false otherwise.
+     */
+    private fun isResponseSuccessful(responseCode: Int): Boolean {
+        return responseCode == 200
+    }
+
+    /**
+     * This function throws an exception based on the response code.
+     * @param responseCode Int The response code to check.
+     * @throws ResponseCodeException The exception to throw.
+     * @see ResponseErrorCode
+     * @see ResponseCodeException
+     */
+    private fun throwOnResponseError(responseCode: Int) {
+        val responseErrorCode = ResponseErrorCode.values().find { it.code == responseCode }
+        if (responseErrorCode != null) {
+            throw ResponseCodeException(responseErrorCode.message, responseErrorCode.code)
+        } else if (responseCode == 0) {
+            throw ResponseCodeException("No response received!", responseCode)
+        }
+
+        throw ResponseCodeException("Unknown error occurred!", responseCode)
     }
 
     /**
@@ -88,7 +120,13 @@ object EdamamClient {
         httpURLConnection = urls[searchType]?.openConnection() as HttpURLConnection
         httpURLConnection?.requestMethod = "GET"
         httpURLConnection?.setRequestProperty("Accept-Encoding", "gzip")
-        httpURLConnection?.headerFields?.put("app_id", listOf(ClientApplicationAuthentication.APP_ID))
-        httpURLConnection?.headerFields?.put("app_key", listOf(ClientApplicationAuthentication.APP_KEY))
+        httpURLConnection?.headerFields?.put(
+            "app_id",
+            listOf(ClientApplicationAuthentication.APP_ID)
+        )
+        httpURLConnection?.headerFields?.put(
+            "app_key",
+            listOf(ClientApplicationAuthentication.APP_KEY)
+        )
     }
 }
