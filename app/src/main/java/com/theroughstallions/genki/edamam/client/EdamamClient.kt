@@ -32,6 +32,7 @@ object EdamamClient {
         httpURLConnection?.headerFields?.put("ingr", listOf(query))
         httpURLConnection?.connect() // Open the connection.
 
+        checkResponseCode(httpURLConnection?.responseCode ?: 0)
         val response = getResponseFromInputStream()
 
         httpURLConnection?.disconnect() // Close the connection.
@@ -49,6 +50,7 @@ object EdamamClient {
         httpURLConnection?.headerFields?.put("ingredients", listOf(query))
         httpURLConnection?.connect() // Open the connection.
 
+        checkResponseCode(httpURLConnection?.responseCode ?: 0)
         val response = getResponseFromInputStream()
 
         httpURLConnection?.disconnect() // Close the connection.
@@ -66,10 +68,7 @@ object EdamamClient {
         httpURLConnection?.headerFields?.put("q", listOf(query))
         httpURLConnection?.connect() // Open the connection.
 
-        if (!isResponseSuccessful(httpURLConnection?.responseCode ?: 0)) {
-            throwOnResponseError(httpURLConnection?.responseCode ?: 0)
-        }
-
+        checkResponseCode(httpURLConnection?.responseCode ?: 0)
         val response = getResponseFromInputStream()
 
         httpURLConnection?.disconnect() // Close the connection.
