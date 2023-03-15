@@ -105,9 +105,9 @@ object EdamamClient {
     }
 
     /**
-     * This function gets the response from the API.
+     * This function gets the response from the input stream.
      *
-     * @return Response The response from the API.
+     * @return The response from the API.
      */
     private fun getResponseFromInputStream(): Response {
         return Response(httpURLConnection?.inputStream?.bufferedReader()?.readText() ?: "")
