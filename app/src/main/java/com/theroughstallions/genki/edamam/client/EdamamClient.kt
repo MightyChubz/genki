@@ -78,6 +78,21 @@ object EdamamClient {
 
     /**
      * Checks if the response code is valid. If it is not, then an exception is thrown.
+     * @param responseCode Int The response code to check.
+     * @throws ResponseCodeException The exception to throw.
+     * @see ResponseErrorCode
+     * @see ResponseCodeException
+     * @see isResponseSuccessful
+     * @see throwOnResponseError
+     */
+    private fun checkResponseCode(responseCode: Int) {
+        if (!isResponseSuccessful(responseCode)) {
+            throwOnResponseError(responseCode)
+        }
+    }
+
+    /**
+     * Checks if the response code is valid. If it is not, then an exception is thrown.
      *
      * @param responseCode Int The response code to check.
      * @return Boolean True if the response code is valid, false otherwise.
