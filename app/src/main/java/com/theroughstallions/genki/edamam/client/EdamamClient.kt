@@ -8,8 +8,8 @@ import java.net.URL
  * This is the main client for the Edamam API. It contains the URLs for the API endpoints and
  * provides functions to help communicate safely with the API. This class is a singleton.
  *
- * @property urls Map<String, URL> A map of the API endpoints.
- * @property httpURLConnection HttpURLConnection? The HTTP connection to the API.
+ * @property urls A map of the API endpoints.
+ * @property httpURLConnection The HTTP connection to the API.
  * @see SearchTypes
  * @see Response
  */
@@ -26,8 +26,8 @@ object EdamamClient {
     /**
      * This function sends a parser request to the API.
      *
-     * @param query String The query to send to the API.
-     * @return Response The response from the API.
+     * @param query The query to send to the API.
+     * @return The response from the API.
      */
     fun sendParserRequest(query: String): Response {
         configureURL(SearchTypes.PARSER)
@@ -54,10 +54,10 @@ object EdamamClient {
     }
 
     /**
-     * This function sends a nutrients request to the API.
+     * This function sends a nutrients request to the API as a POST request.
      *
-     * @param json String The query to send to the API.
-     * @return Response The response from the API.
+     * @param json The JSON to send to the API.
+     * @return The response from the API.
      */
     fun sendNutrientsRequest(json: String): Response {
         configureURL(SearchTypes.NUTRIENTS)
@@ -84,8 +84,8 @@ object EdamamClient {
     /**
      * This function sends an auto-completion request to the API.
      *
-     * @param query String The query to send to the API.
-     * @return Response The response from the API.
+     * @param query The query to send to the API.
+     * @return The response from the API.
      */
     fun sendAutoCompletionRequest(query: String): Response {
         configureURL(SearchTypes.AUTO_COMPLETION)
@@ -113,7 +113,7 @@ object EdamamClient {
 
     /**
      * Checks if the response code is valid. If it is not, then an exception is thrown.
-     * @param responseCode Int The response code to check.
+     * @param responseCode The response code to check.
      * @throws ResponseCodeException The exception to throw.
      * @see ResponseErrorCode
      * @see ResponseCodeException
@@ -129,8 +129,8 @@ object EdamamClient {
     /**
      * Checks if the response code is valid. If it is not, then an exception is thrown.
      *
-     * @param responseCode Int The response code to check.
-     * @return Boolean True if the response code is valid, false otherwise.
+     * @param responseCode The response code to check.
+     * @return True if the response code is valid, false otherwise.
      */
     private fun isResponseSuccessful(responseCode: Int): Boolean {
         return responseCode == 200
@@ -138,7 +138,7 @@ object EdamamClient {
 
     /**
      * This function throws an exception based on the response code.
-     * @param responseCode Int The response code to check.
+     * @param responseCode The response code to check.
      * @throws ResponseCodeException The exception to throw.
      * @see ResponseErrorCode
      * @see ResponseCodeException
@@ -166,7 +166,7 @@ object EdamamClient {
     /**
      * Configures the URL to send the request to.
      *
-     * @param searchType SearchTypes The type of search to perform.
+     * @param searchType The type of search to perform.
      */
     private fun configureURL(searchType: SearchTypes) {
         currentURL =
@@ -191,8 +191,8 @@ object EdamamClient {
 
     /**
      * Adds a query parameter to the URL and allows for chaining more than one query parameter.
-     * @param key String The key of the query parameter.
-     * @param value String The value of the query parameter.
+     * @param key The key of the query parameter.
+     * @param value The value of the query parameter.
      */
     private fun URL.addQueryParameter(key: String, value: String): URL {
         val url = this.toURI().toString()
