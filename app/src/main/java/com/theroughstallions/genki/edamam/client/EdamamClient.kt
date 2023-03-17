@@ -1,5 +1,6 @@
 package com.theroughstallions.genki.edamam.client
 
+import android.util.Log
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -20,6 +21,7 @@ object EdamamClient {
     )
 
     private var httpURLConnection: HttpURLConnection? = null
+    private var currentURL: URL? = null
 
     /**
      * This function sends a parser request to the API.
@@ -28,8 +30,20 @@ object EdamamClient {
      * @return Response The response from the API.
      */
     fun sendParserRequest(query: String): Response {
-        configureConnection(SearchTypes.PARSER)
-        httpURLConnection?.headerFields?.put("ingr", listOf(query))
+        configureURL(SearchTypes.PARSER)
+        currentURL?.addQueryParameter("ingr", query)
+        configureConnection(RequestMethod.GET)
+
+        Log.d("Parser Request", httpURLConnection?.url.toString())
+
+        httpURLConnection?.requestProperties?.forEach { (key, value) ->
+            Log.d("Parser Request", "$key: $value")
+        }
+
+        httpURLConnection?.headerFields?.forEach { (key, value) ->
+            Log.d("Parser Request", "$key: $value")
+        }
+
         httpURLConnection?.connect() // Open the connection.
 
         checkResponseCode(httpURLConnection?.responseCode ?: 0)
@@ -42,12 +56,22 @@ object EdamamClient {
     /**
      * This function sends a nutrients request to the API.
      *
-     * @param query String The query to send to the API.
+     * @param json String The query to send to the API.
      * @return Response The response from the API.
      */
-    fun sendNutrientsRequest(query: String): Response {
-        configureConnection(SearchTypes.NUTRIENTS)
-        httpURLConnection?.headerFields?.put("ingredients", listOf(query))
+    fun sendNutrientsRequest(json: String): Response {
+        configureURL(SearchTypes.NUTRIENTS)
+        configureConnection(RequestMethod.POST)
+        httpURLConnection?.setRequestProperty("Content-Type", "application/json")
+        httpURLConnection?.setRequestProperty("Content-Length", json.length.toString())
+        httpURLConnection?.outputStream?.write(json.toByteArray())
+
+        Log.d("Nutrients Request", httpURLConnection?.url.toString())
+
+        httpURLConnection?.headerFields?.forEach { (key, value) ->
+            Log.d("Nutrients Request", "$key: $value")
+        }
+
         httpURLConnection?.connect() // Open the connection.
 
         checkResponseCode(httpURLConnection?.responseCode ?: 0)
@@ -64,8 +88,20 @@ object EdamamClient {
      * @return Response The response from the API.
      */
     fun sendAutoCompletionRequest(query: String): Response {
-        configureConnection(SearchTypes.AUTO_COMPLETION)
-        httpURLConnection?.headerFields?.put("q", listOf(query))
+        configureURL(SearchTypes.AUTO_COMPLETION)
+        currentURL?.addQueryParameter("q", query)
+        configureConnection(RequestMethod.GET)
+
+        Log.d("Auto Complete Request", httpURLConnection?.url.toString())
+
+        httpURLConnection?.requestProperties?.forEach { (key, value) ->
+            Log.d("Auto Complete Request", "$key: $value")
+        }
+
+        httpURLConnection?.headerFields?.forEach { (key, value) ->
+            Log.d("Auto Complete Request", "$key: $value")
+        }
+
         httpURLConnection?.connect() // Open the connection.
 
         checkResponseCode(httpURLConnection?.responseCode ?: 0)
