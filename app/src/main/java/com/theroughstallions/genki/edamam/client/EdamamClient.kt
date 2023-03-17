@@ -128,16 +128,30 @@ object EdamamClient {
     }
 
     /**
-     * This function configures the connection to the API.
+     * Configures the URL to send the request to.
      *
      * @param searchType SearchTypes The type of search to perform.
      */
-    private fun configureConnection(searchType: SearchTypes) {
-        httpURLConnection = urls[searchType]?.openConnection() as HttpURLConnection
-        httpURLConnection?.requestMethod = "GET"
-        httpURLConnection?.setRequestProperty("Accept-Encoding", "gzip")
-        httpURLConnection?.headerFields?.put(
-            "app_id",
+    private fun configureURL(searchType: SearchTypes) {
+        currentURL =
+            urls[searchType]?.addQueryParameter("app_id", ClientApplicationAuthentication.APP_ID)
+                ?.addQueryParameter("app_key", ClientApplicationAuthentication.APP_KEY)
+    }
+
+    /**
+     * Configures the connection to send the request to.
+     *
+     * @param requestMethod The request method to use.
+     * @param acceptGZip True if the request should accept GZip, false otherwise.
+     */
+    private fun configureConnection(requestMethod: RequestMethod, acceptGZip: Boolean = false) {
+        httpURLConnection = currentURL?.openConnection() as HttpURLConnection
+        httpURLConnection?.requestMethod = requestMethod.name
+        httpURLConnection?.setRequestProperty("Accept", "application/json")
+        if (acceptGZip) {
+            httpURLConnection?.setRequestProperty("Accept-Encoding", "gzip")
+        }
+    }
 
     /**
      * Adds a query parameter to the URL and allows for chaining more than one query parameter.
