@@ -170,8 +170,8 @@ object EdamamClient {
      */
     private fun configureURL(searchType: SearchTypes) {
         currentURL =
-            urls[searchType]?.addQueryParameter("app_id", ClientApplicationAuthentication.APP_ID)
-                ?.addQueryParameter("app_key", ClientApplicationAuthentication.APP_KEY)
+            urls[searchType]?.addQueryParameter("app_id", EdamamCredentials.APP_ID)
+                ?.addQueryParameter("app_key", EdamamCredentials.APP_KEY)
     }
 
     /**
