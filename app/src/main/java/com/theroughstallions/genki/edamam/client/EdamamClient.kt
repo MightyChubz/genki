@@ -138,11 +138,15 @@ object EdamamClient {
         httpURLConnection?.setRequestProperty("Accept-Encoding", "gzip")
         httpURLConnection?.headerFields?.put(
             "app_id",
-            listOf(ClientApplicationAuthentication.APP_ID)
-        )
-        httpURLConnection?.headerFields?.put(
-            "app_key",
-            listOf(ClientApplicationAuthentication.APP_KEY)
-        )
+
+    /**
+     * Adds a query parameter to the URL and allows for chaining more than one query parameter.
+     * @param key String The key of the query parameter.
+     * @param value String The value of the query parameter.
+     */
+    private fun URL.addQueryParameter(key: String, value: String): URL {
+        val url = this.toURI().toString()
+        val separator = if (url.contains("?")) "&" else "?"
+        return URL("$url$separator$key=$value")
     }
 }
