@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
@@ -16,5 +17,9 @@
             android:id="@+id/nav_contact_us"
             android:icon="@drawable/ic_menu_contact_support"
             android:title="@string/menu_contact_us" />
+        <item
+            android:id="@+id/nav_client_debug"
+            android:icon="@drawable/ic_home_construction"
+            android:title="@string/menu_client_debug_title" />
     </group>
 </menu>

@@ -41,5 +41,8 @@
 
     <string name="add_Item">add item to list</string>
     <string name="list_total">10</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_client_debug_title">Debug</string>
 
 </resources>
