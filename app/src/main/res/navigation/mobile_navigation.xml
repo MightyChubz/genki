@@ -19,5 +19,10 @@
         android:name="com.theroughstallions.genki.ui.fragments.ContactUsFragment"
         android:label="@string/menu_contact_us"
         tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/nav_client_debug"
+        android:name="com.theroughstallions.genki.ui.fragments.APIDebugFragment"
+        android:label="@string/menu_client_debug_title"
+        tools:layout="@layout/fragment_api_debug" />
 
 </navigation>
