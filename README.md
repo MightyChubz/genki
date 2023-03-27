@@ -9,3 +9,6 @@ Genki is a shopping list on Android that offers pricing and calorie counting on 
 - Ensure the JDK version is 19.0.2
 - Download, and wait for Gradle to sync.
 - From there, you will be good to start building and working in JDK
+
+## API Key
+To use the API for both the store and Edamam, please contact the respiratory owner for the key, or create a developer key for your clone of the respiratory. This is a security measure to ensure the key isn't misused and or used for other purposes outside of the app.
